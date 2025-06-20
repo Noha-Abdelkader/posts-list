@@ -5,7 +5,23 @@
 
 - showing posts list (title , description , created at date ).
 - ability to navigate to post details page.
-- ability to search spacific post title or post decription .
+- ability to search spacific post title or post decription.
+
+## Folder structure
+BASE/
+├── .nuxt/                  # Nuxt.js build output (ignored in git)
+├── node_modules/           # Dependencies
+├── composables/            # All composable files
+├── components/
+│   ├── layout/             # Layout reuse components  
+├── pages/
+│   ├── /                  # Posts list
+│   │   └── [id]           # Post details
+├── nuxt.config.js          # Nuxt.js configuration
+├── package.json            # Project metadata & scripts
+└── README.md               # This file
+```
+
 
 ## Packages
 Main packages uses ( tailwindCss v3.4 , Pinia  , Vuetify) 
@@ -18,6 +34,7 @@ Main packages uses ( tailwindCss v3.4 , Pinia  , Vuetify)
 
 ![image](https://github.com/user-attachments/assets/78b4a875-c783-409d-8d26-1f865b8ee8a1)
 ![image](https://github.com/user-attachments/assets/b32de8dd-8204-404f-841a-607f8bae1595)
-![image](https://github.com/user-attachments/assets/16f836a9-36d7-414e-b8cd-c84853ce529b)
+![image](https://github.com/user-attachments/assets/65bfb5e3-22d0-4578-90a7-0d0a650668e4)
+
 
 
