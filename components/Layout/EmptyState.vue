@@ -8,13 +8,13 @@
     ]"
   >
     <div
-      class="text-custom-green-600 text-lg font-semibold flex  flex-col items-center justify-center gap-2"
+      class="text-custom-green-600 text-lg font-semibold flex flex-col items-center justify-center gap-2"
     >
-      <img
+      <NuxtImg
         v-if="border"
         src="https://cdni.iconscout.com/illustration/premium/thumb/search-website-illustration-download-in-svg-png-gif-file-formats--records-content-searching-for-magnify-seo-optimization-pack-web-illustrations-4707094.png?f=webp"
         alt="not found"
-        class="w-3/4"
+        class="w-3/4 mx-auto"
       />
       <p class="first-letter:capitalize mb-7 flex items-center gap-2">
         <i class="mdi mdi-alert-circle-outline text-2xl"></i>

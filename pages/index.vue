@@ -149,7 +149,6 @@ const searchedPosts = computed(() => {
     );
   } else {
     return [];
-    // initialPosts.value = posts.value;
   }
 });
 
