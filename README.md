@@ -1,75 +1,23 @@
-# Nuxt Minimal Starter
+# Posts list
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+## Description
 
-Make sure to install dependencies:
+- showing posts list (title , description , created at date ).
+- ability to navigate to post details page.
+- ability to search spacific post title or post decription .
 
-```bash
-# npm
-npm install
+## Packages
+Main packages uses ( tailwindCss v3.4 , Pinia  , Vuetify) 
 
-# pnpm
-pnpm install
+## Setup Project local
+-first, clone it by using "git clone https://github.com/Noha-Abdelkader/posts-list.git" command.
+-then, install packages by using "yarn install" command.
+-last, run project locally by using "yarn dev" command.
+- navigate by browser to [ base port url + "/" ] to get post page.
 
-# yarn
-yarn install
+![image](https://github.com/user-attachments/assets/78b4a875-c783-409d-8d26-1f865b8ee8a1)
+![image](https://github.com/user-attachments/assets/b32de8dd-8204-404f-841a-607f8bae1595)
+![image](https://github.com/user-attachments/assets/16f836a9-36d7-414e-b8cd-c84853ce529b)
 
-# bun
-bun install
-```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
