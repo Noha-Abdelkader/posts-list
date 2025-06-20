@@ -1,6 +1,6 @@
 <template>
   <section>
-    <header class="flex lg:items-center gap-3 mb-4 flex-col  lg:flex-row ms-3 lg:ms-0">
+    <header class="flex lg:items-center gap-3 mb-4 flex-col  lg:flex-row ms-3 lg:ms-0 bg-custom-green-500/20 p-2 sm:p-5">
       <NuxtLink href="/" class="text-red-500 text-sm font-semibold underline">
         <i class="mdi mdi-arrow-left-circle"></i>
         Back to posts</NuxtLink
@@ -15,7 +15,7 @@
     </header>
     <article v-if="selectedPost" class="flex items-center flex-col justify-center lg:flex-row ">
       <div
-        class="[&_p]:flex [&_p]:items-center [&_p]:gap-3 [&_p>i]:text-xl space-y-5  w-[90%] lg:w-3/4  mx-auto px-1 sm:px-4  border-2 border-gray-200 rounded-md py-3"
+        class="[&_p]:flex [&_p]:items-center [&_p]:gap-3 [&_p>i]:text-xl space-y-5  w-[90%] lg:w-3/4  mx-auto px-1 sm:!px-5 bg-zinc-200 border-2 border-gray-200 rounded-md py-4"
       >
         <p class="md:text-xl text-custom-green-600">
           <i class="text-red-700 mdi mdi-menu-right-outline"> </i>

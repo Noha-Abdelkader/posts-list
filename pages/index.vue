@@ -29,87 +29,91 @@
     <!-- Content -->
     <article class="mx-5">
       <!-- Error -->
-      <LayoutError v-if="error && !isLoading && !initialLoad" :error="error" />
+      <LayoutError v-if="error" :error="error" />
 
       <!-- Initial loading  -->
-      <div v-if="initialLoad">
-        <LayoutLoading class="min-h-[70dvh]" :is-loading="initialLoad" />
-      </div>
+      <div v-else>
+        <div v-if="initialLoad">
+          <LayoutLoading class="min-h-[70dvh]" :is-loading="initialLoad" />
+        </div>
 
-      <!-- Posts -->
-      <div v-else-if="haveData">
-        <div class="grid gap-4 md:grid-cols-2 *:h-full">
-          <!-- Posts grid -->
-          <div
-            v-for="post in isSearching ? searchedPosts : posts"
-            :key="post.id"
-          >
-            <v-hover
-              v-slot="{ isHovering, props }"
-              open-delay="200"
-              close-delay="200"
+        <!-- Posts -->
+        <div v-else-if="haveData && !error">
+          <div class="grid gap-4 md:grid-cols-2 *:h-full">
+            <!-- Posts grid -->
+            <div
+              v-for="post in isSearching ? searchedPosts : posts"
+              :key="post.id"
             >
-              <v-card
-                :class="['h-full relative', { 'on-hover': isHovering }]"
-                :elevation="isHovering ? 16 : 2"
-                v-bind="props"
-                @click="(event) => selectCard(post, event)"
+              <v-hover
+                v-slot="{ isHovering, props }"
+                open-delay="200"
+                close-delay="200"
               >
-                <v-card-item>
-                  <v-card-title>
-                    <h3 class="text-sm flex items-center gap-2">
-                      <span class="text-red-500">
-                        <i class="mdi mdi-menu-right-outline"></i>
-                        {{ post.id }}
+                <v-card
+                  :class="['h-full relative', { 'on-hover': isHovering }]"
+                  :elevation="isHovering ? 16 : 2"
+                  v-bind="props"
+                  @click="(event) => selectCard(post, event)"
+                >
+                  <v-card-item>
+                    <v-card-title>
+                      <h3 class="text-sm flex items-center gap-2">
+                        <span class="text-red-500">
+                          <i class="mdi mdi-menu-right-outline"></i>
+                          {{ post.id }}
+                        </span>
+                        <span class="text-custom-green-600">
+                          {{ post.title }}
+                        </span>
+                      </h3>
+                    </v-card-title>
+                  </v-card-item>
+
+                  <v-card-text>
+                    <p class="text-xs text-gray-500 mb-4">
+                      {{ post.description }}
+                    </p>
+
+                    <p class="text-xs absolute bottom-2 inset-x-4">
+                      <span class="font-semibold">Created at: {{ " " }}</span>
+                      <span class="text-red-700">
+                        {{ formatDate(post.created_at) }}
                       </span>
-                      <span class="text-custom-green-600">
-                        {{ post.title }}
-                      </span>
-                    </h3>
-                  </v-card-title>
-                </v-card-item>
-
-                <v-card-text>
-                  <p class="text-xs text-gray-500 mb-4">
-                    {{ post.description }}
-                  </p>
-
-                  <p class="text-xs absolute bottom-2 inset-x-4">
-                    <span class="font-semibold">Created at: {{ " " }}</span>
-                    <span class="text-red-700">
-                      {{ formatDate(post.created_at) }}
-                    </span>
-                  </p>
-                </v-card-text>
-              </v-card>
-            </v-hover>
-          </div>
-        </div>
-
-        <!-- Load more trigger incase no search apply -->
-        <div
-          v-if="!isSearching"
-          ref="loadMoreTrigger"
-          class="flex justify-center py-8"
-        >
-          <LayoutLoading
-            v-if="isLoading"
-            :is-loading="isLoading"
-            message="loading more posts "
-          />
-
-          <div v-else-if="hasMore" class="w-full">
-            <p class="text-center text-custom-green-600">Show more posts ...</p>
+                    </p>
+                  </v-card-text>
+                </v-card>
+              </v-hover>
+            </div>
           </div>
 
-          <LayoutEmptyState v-else message="no more posts to load." />
+          <!-- Load more trigger incase no search apply -->
+          <div
+            v-if="!isSearching"
+            ref="loadMoreTrigger"
+            class="flex justify-center py-8"
+          >
+            <LayoutLoading
+              v-if="isLoading"
+              :is-loading="isLoading"
+              message="loading more posts "
+            />
+
+            <div v-else-if="hasMore" class="w-full">
+              <p class="text-center text-custom-green-600">
+                Show more posts ...
+              </p>
+            </div>
+
+            <LayoutEmptyState v-else message="no more posts to load." />
+          </div>
+          <!-- Incase search and no posts found -->
+          <LayoutEmptyState v-else message="no posts found." />
         </div>
-        <!-- Incase search and no posts found -->
-        <LayoutEmptyState v-else message="no posts found." />
+
+        <!-- Empty State -->
+        <LayoutEmptyState v-else border message="no posts found." />
       </div>
-
-      <!-- Empty State -->
-      <LayoutEmptyState v-else border message="no posts found." />
     </article>
   </section>
 </template>
@@ -157,6 +161,7 @@ async function fetchPosts(page: number) {
     total: number;
     last_page: number;
   }>(`http://13.60.56.112/api/posts?page=${page}`);
+
   return response;
 }
 
@@ -219,7 +224,7 @@ onMounted(async () => {
   if (selectedPostPostion.value) {
     window.scrollTo({
       top: selectedPostPostion.value,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 });
