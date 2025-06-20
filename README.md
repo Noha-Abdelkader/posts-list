@@ -8,19 +8,7 @@
 - ability to search spacific post title or post decription.
 
 ## Folder structure
-BASE/
-├── .nuxt/                  # Nuxt.js build output (ignored in git)
-├── node_modules/           # Dependencies
-├── composables/            # All composable files
-├── components/
-│   ├── layout/             # Layout reuse components  
-├── pages/
-│   ├── /                  # Posts list
-│   │   └── [id]           # Post details
-├── nuxt.config.js          # Nuxt.js configuration
-├── package.json            # Project metadata & scripts
-└── README.md               # This file
-```
+![image](https://github.com/user-attachments/assets/1d3ab55f-9ba5-429f-bc85-9c7dd1d988f9)
 
 
 ## Packages
