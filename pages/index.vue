@@ -29,7 +29,7 @@
     <!-- Content -->
     <article class="mx-5">
       <!-- Error -->
-      <LayoutError v-if="error" :error="error" />
+      <LayoutError v-if="error && !isLoading && !initialLoad" :error="error" />
 
       <!-- Initial loading  -->
       <div v-if="initialLoad">

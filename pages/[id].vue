@@ -1,11 +1,11 @@
 <template>
   <section>
     <header class="flex lg:items-center gap-3 mb-4 flex-col  lg:flex-row ms-3 lg:ms-0">
-      <NuxtLink href="/" class="text-red-500 text-sm font-semibold">
+      <NuxtLink href="/" class="text-red-500 text-sm font-semibold underline">
         <i class="mdi mdi-arrow-left-circle"></i>
         Back to posts</NuxtLink
       >
-      <h3 class=" text-lg sm:text-2xl font-semibold text-gray-700  lg:ms-8 underline">
+      <h3 class=" text-lg sm:text-2xl font-semibold text-gray-700  lg:ms-16 ">
         Post details
         <span v-if="selectedPost">
           for post id
@@ -15,7 +15,7 @@
     </header>
     <article v-if="selectedPost" class="flex items-center flex-col justify-center lg:flex-row ">
       <div
-        class="[&_p]:flex [&_p]:items-center [&_p]:gap-3 [&_p>i]:text-xl space-y-5  w-full mx-auto px-2"
+        class="[&_p]:flex [&_p]:items-center [&_p]:gap-3 [&_p>i]:text-xl space-y-5  w-[90%] lg:w-3/4  mx-auto px-1 sm:px-4  border-2 border-gray-200 rounded-md py-3"
       >
         <p class="md:text-xl text-custom-green-600">
           <i class="text-red-700 mdi mdi-menu-right-outline"> </i>

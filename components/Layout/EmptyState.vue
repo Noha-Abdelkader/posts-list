@@ -3,7 +3,7 @@
     :class="[
       ' w-full flex items-center justify-center ',
       border
-        ? 'min-h-[20dvh] w-3/4 mx-auto border border-custom-green-600 rounded-md bg-zinc-200'
+        ? 'min-h-[20dvh] w-2/3 mx-auto border border-custom-green-600 rounded-md bg-zinc-200'
         : 'min-h-5 ',
     ]"
   >
