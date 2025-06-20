@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .loader {
+    border-radius: 50%;
+    background-color: #aed581;
+    box-shadow: 32px 0 #aed581, -32px 0 #aed581;
+    position: relative;
+    animation: flash 0.5s ease-out infinite alternate;
+  }
+
+  @keyframes flash {
+    0% {
+      background-color: #dcedc8;
+      box-shadow: 32px 0 #dcedc8, -32px 0 #aed581;
+    }
+    50% {
+      background-color: #aed581;
+      box-shadow: 32px 0 #dcedc8, -32px 0 #dcedc8;
+    }
+    100% {
+      background-color: #aed581;
+      box-shadow: 32px 0 #aed581, -32px 0 #dcedc8;
+    }
+  }
+}
+:root {
+  background-color: #f5f5f5;
+}
+

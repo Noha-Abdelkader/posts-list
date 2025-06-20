@@ -1,0 +1,9 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    // 'node16', 'nodenext', or 'bundler'
+    "moduleResolution": "node",
+    // "types": ["vuetify"]
+  }
+}
