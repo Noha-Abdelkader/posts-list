@@ -160,7 +160,12 @@ async function fetchPosts(page: number) {
     data: Post[];
     total: number;
     last_page: number;
-  }>(`http://13.60.56.112/api/posts?page=${page}`);
+  }>(`http://13.60.56.112/api/posts?page=${page}`, {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": `*`,
+    },
+  });
 
   return response;
 }
