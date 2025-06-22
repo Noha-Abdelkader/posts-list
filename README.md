@@ -12,9 +12,13 @@
 
 
 ## Main packages
- - "tailwindcss"  : "3.4.3"  
- - "pinia"        : "^3.0.3"
- - "vuetify"      : "^3.8"       
+| Package     | Version |
+| ---      | ---       |
+| Nuxt | "3.17.5"        |
+| tailwindcss | "3.4.3"        |
+| pinia | "^3.0.3"      |
+| vuetify | ^3.8"          |
+
 
 ## Setup Project local
 - first, clone it by using "git clone https://github.com/Noha-Abdelkader/posts-list.git" command.
@@ -44,7 +48,7 @@ Explain each :
   
 | Key           | Type       |  Default           | Description      |
 | ------------- | ------------- |------------- | ------------- |
-| initalize  | Function  | ---  | Function  | To Fetch endpoint of list at the first time.
+| initalize  | Function  | ---    | To Fetch endpoint of list at the first time.
 | initialLoad  | Boolean  | false  | if this is first time to fetch endpoint of list or not (true/false).
 | isLoading  | Boolean  | false | fetch start (true) fetch end (false).|
 | error  | object  | "Failed to load data"  | showing error in key call error['message'].  |
