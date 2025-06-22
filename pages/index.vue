@@ -51,6 +51,7 @@
                 close-delay="200"
               >
                 <v-card
+                  :id="post.id"
                   :class="['h-full relative', { 'on-hover': isHovering }]"
                   :elevation="isHovering ? 16 : 2"
                   v-bind="props"
@@ -200,32 +201,29 @@ function clearSearch() {
 // Store
 import { usePostStore } from "~/stores/features/posts";
 const { selectedPost, selectedPostPostion } = storeToRefs(usePostStore());
-const { setPosition } = usePostStore();
 
+// Handle select card
 function selectCard(post: Post, event: MouseEvent) {
-  // Set details
-  selectedPost.value = post;
+  selectedPost.value = { ...post };
+  selectedPostPostion.value =
+    document.getElementById(`${selectedPost.value.id}`)?.offsetTop ?? null;
   navigateTo(`/${selectedPost.value.id}`);
-  // Set postion
-  const target = event.currentTarget as HTMLElement;
-  const rect = target.getBoundingClientRect();
-  setPosition(window.scrollY + rect.top + 200);
-  // setPosition( event.clientY);
 }
 
 // Initialize on mount
 onMounted(async () => {
   // Fetch
   await initialize();
+
   // Reset variables
   clearSearch();
+  // selectedPost.value = null;
+  // selectedPostPostion.value = null;
 
-  if (selectedPostPostion.value) {
-    window.scrollTo({
-      top: selectedPostPostion.value,
-      behavior: "smooth",
-    });
-  }
+  window.scrollTo({
+    top: selectedPostPostion.value ?? 0,
+    behavior: "smooth",
+  });
 });
 </script>
 

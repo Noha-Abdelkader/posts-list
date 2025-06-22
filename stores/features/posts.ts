@@ -2,16 +2,20 @@
 import type { Post } from "~/types/features/posts";
 
 export const usePostStore = defineStore("post", () => {
-  const selectedPost = ref<Post | null>(null);
-  const selectedPostPostion = ref<number | null>(null);
+  const maxAge = 2592000000;
 
-  function setPosition(y: number) {
-    selectedPostPostion.value = y;
-  }
+  const selectedPost = useCookie<Post | null>("selectedPost", {
+    maxAge,
+    default: () => null,
+  });
+
+  const selectedPostPostion = useCookie<number | null>("selectedPostPostion", {
+    maxAge,
+    default: () => null,
+  });
 
   return {
     selectedPost,
     selectedPostPostion,
-    setPosition,
   };
 });

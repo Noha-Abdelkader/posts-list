@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "@/assets/scss/tailwind.scss",
     "@mdi/font/css/materialdesignicons.min.css",
   ],
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxt/image"],
   build: {
     transpile: ["vuetify"],
   },
@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       defaultTheme: "light", //client-side for toggling themes
+      BASE_URL:process.env.BASE_URL
     },
   },
 });
