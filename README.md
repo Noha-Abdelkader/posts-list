@@ -51,7 +51,7 @@ Explain each :
 | initalize  | Function  | ---    | To Fetch endpoint of list at the first time.
 | initialLoad  | Boolean  | false  | if this is first time to fetch endpoint of list or not (true/false).
 | isLoading  | Boolean  | false | fetch start (true) fetch end (false).|
-| error  | object  | "Failed to load data"  | showing error in key call error['message'].  |
+| error  | object|string  | "Failed to load data"  | showing error in key call error['message'].  |
 | payload  | Array of objects  | []  |  data from fetc  |
 | haveData  | Boolean  | false  | if payload array have objects or not (true / false).  |
 | hasMore  | Boolean  | false  | while scroll if endpoint have more data to show & not the last page (true) & if reach to lastPage  (false)  |
