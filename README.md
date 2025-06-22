@@ -41,27 +41,16 @@
          } = useInfiniteScroll<Post>(fetchPosts);
 
 Explain each :
-
-  - initalize  (Function)         : To Fetch endpoint of list at the first time.
-
-  - initialLoad (Boolean)         : if this is first time to fetch endpoint of list or not (true/false).
-    
-  - isLoading (Boolean)           :  fetch start => true.
-                                     fetch end   =>  false.
-                                     default false
-      
-  - error     (object)            : showing error in key call error['message'],
-                                    default "Failed to load data".
-    
-  - payload   (Array of objects)  : data from fetch.
-    
-  - haveData   (Boolean)        :   if payload array have objects or not (true / false);
-            
-  -  hasMore  (Boolean)           :  while scroll if endpoint
-                                    have more data to show & not the last page => true
-                                     if reach to lastPage  => false.
   
-
+| Key           | Type       |  Default           | Description      |
+| ------------- | ------------- |------------- | ------------- |
+| initalize  | Function  | ---  | Function  | To Fetch endpoint of list at the first time.
+| initialLoad  | Boolean  | false  | if this is first time to fetch endpoint of list or not (true/false).
+| isLoading  | Boolean  | false | fetch start (true) fetch end (false).|
+| error  | object  | "Failed to load data"  | showing error in key call error['message'].  |
+| payload  | Array of objects  | []  |  data from fetc  |
+| haveData  | Boolean  | false  | if payload array have objects or not (true / false).  |
+| hasMore  | Boolean  | false  | while scroll if endpoint have more data to show & not the last page (true) & if reach to lastPage  (false)  |
   
  
  Description : 
@@ -84,6 +73,7 @@ Explain each :
   
 
 DEMO LINK : https://drive.google.com/file/d/13ys2rkNab3jNwh1HamxlL7tovYrisfSH/view?usp=sharing
+
 ![image](https://github.com/user-attachments/assets/78b4a875-c783-409d-8d26-1f865b8ee8a1)
 ![image](https://github.com/user-attachments/assets/d8b9269b-4a65-48ed-8f08-a5f1a1a3e4a2)
 ![image](https://github.com/user-attachments/assets/65bfb5e3-22d0-4578-90a7-0d0a650668e4)
